@@ -21,6 +21,6 @@ async def ping(ctx):
 async def on_message(message):
     if message.content == "!r start":
         num = random.randint(1,10)
-         await message.channel.send("抽選結果は" + num + "でした!")
+        await message.channel.send(num)
 
 bot.run(token)
