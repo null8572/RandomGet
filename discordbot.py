@@ -12,14 +12,14 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+async def on_message(message):
+    if message.content == "!r start":
+        message = random.randint(1,10)
+        await message.send(num)
+
 
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
-    if ctx.content == "!r start":
-        num = random.randint(1,10)
-        await ctx.send(num)
-
 
 bot.run(token)
