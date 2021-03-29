@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     if message.content == "!r start":
         message = random.randint(1,10)
-        await message.send(num)
+        await message.channel.send(num)
 
 
 @bot.command()
