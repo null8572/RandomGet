@@ -17,10 +17,6 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
 
-@bot.event
-async def on_message(message):
-    if message.content == "!r start":
-        num = random.randint(1,10)
-        await message.send(num)
+
 
 bot.run(token)
