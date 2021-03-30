@@ -13,16 +13,16 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    if message.content == '/start':
-        message = random.randint(1,10)
-        await message.channel.send(num)
-    await message.channel.send('debug::') 
+@bot.command()
+async def start(ctx):
+    await ctx.send('pong')
 
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
+    message = random.randint(1,10)
+    await message.channel.send(num)
+    
+    
 bot.run(token)
 
