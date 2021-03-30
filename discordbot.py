@@ -15,10 +15,10 @@ async def on_command_error(ctx, error):
 
 @client.event
 async def on_message(message):
-    if message.content == "start":
+    if message.content == '/start':
         message = random.randint(1,10)
         await message.channel.send(num)
-
+    await message.channel.send('debug::') 
 
 @bot.command()
 async def ping(ctx):
