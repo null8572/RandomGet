@@ -8,6 +8,8 @@ client = discord.Client()
 @client.event
 async def on_message(message):
     if message.content == '/start':
+        if message.author.bot:
+            return 
         message = random.randint(1,10)
         await message.channel.send(num)
     await message.channel.send('debug::') 
